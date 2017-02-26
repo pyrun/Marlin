@@ -783,20 +783,20 @@
  * in your `pins_MYBOARD.h` file. (e.g., RAMPS 1.4 uses AUX3 pins `X_CS_PIN 53`, `Y_CS_PIN 49`, etc.).
  */
 
-//#define HAVE_TMC2130DRIVER
+#define HAVE_TMC2130DRIVER
 
 #if ENABLED(HAVE_TMC2130DRIVER)
 
-  //#define TMC2130_ADVANCED_CONFIGURATION
+  #define TMC2130_ADVANCED_CONFIGURATION
 
   // CHOOSE YOUR MOTORS HERE, THIS IS MANDATORY
-  //#define X_IS_TMC2130
+  #define X_IS_TMC2130
   //#define X2_IS_TMC2130
-  //#define Y_IS_TMC2130
+  #define Y_IS_TMC2130
   //#define Y2_IS_TMC2130
-  //#define Z_IS_TMC2130
+  #define Z_IS_TMC2130
   //#define Z2_IS_TMC2130
-  //#define E0_IS_TMC2130
+  #define E0_IS_TMC2130
   //#define E1_IS_TMC2130
   //#define E2_IS_TMC2130
   //#define E3_IS_TMC2130
@@ -814,10 +814,10 @@
 
     /* GENERAL CONFIGURATION */
 
-    //#define GLOBAL_EN_PWM_MODE        0
-    #define GLOBAL_I_SCALE_ANALOG     1 // [0,1] 0: Normal, 1: AIN
+    #define GLOBAL_EN_PWM_MODE        0
+    #define GLOBAL_I_SCALE_ANALOG     0 // [0,1] 0: Normal, 1: AIN
     //#define GLOBAL_INTERNAL_RSENSE    0 // [0,1] 0: Normal, 1: Internal
-    #define GLOBAL_EN_PWM_MODE        0 // [0,1] 0: Normal, 1: stealthChop with velocity threshold
+    #define GLOBAL_EN_PWM_MODE        1 // [0,1] 0: Normal, 1: stealthChop with velocity threshold
     //#define GLOBAL_ENC_COMMUTATION    0 // [0,1]
     #define GLOBAL_SHAFT              0 // [0,1] 0: normal, 1: invert
     //#define GLOBAL_DIAG0_ERROR        0 // [0,1]
@@ -835,8 +835,8 @@
 
     /* VELOCITY-DEPENDENT DRIVE FEATURES */
 
-    #define GLOBAL_IHOLD             22 // [0-31] 0: min, 31: max
-    #define GLOBAL_IRUN              31 // [0-31] 0: min, 31: max
+    #define GLOBAL_IHOLD             11 // [0-31] 0: min, 31: max
+    #define GLOBAL_IRUN              20 // [0-31] 0: min, 31: max
     #define GLOBAL_IHOLDDELAY        15 // [0-15] 0: min, 15: about 4 seconds
     //#define GLOBAL_TPOWERDOWN         0 // [0-255] 0: min, 255: about 4 seconds
     //#define GLOBAL_TPWMTHRS           0 // [0-1048576] e.g. 20 corresponds with 2000 steps/s
@@ -858,7 +858,7 @@
     #define GLOBAL_INTPOL             1 // 0: off 1: 256 microstep interpolation
     #define GLOBAL_MRES              16 // number of microsteps
     #define GLOBAL_SYNC               1 // [0-15]
-    #define GLOBAL_VHIGHCHM           1 // [0,1] 0: normal, 1: high velocity stepper mode
+    #define GLOBAL_VHIGHCHM           0 // [0,1] 0: normal, 1: high velocity stepper mode
     #define GLOBAL_VHIGHFS            0 // [0,1] 0: normal, 1: switch to full steps for high velocities
     // #define GLOBAL_VSENSE            0 // [0,1] 0: normal, 1: high sensitivity (not recommended)
     #define GLOBAL_TBL                1 // 0-3: set comparator blank time to 16, 24, 36 or 54 clocks, 1 or 2 is recommended
@@ -896,7 +896,7 @@
     #define X_IRUN           31 // [0-31] 0: min, 31: max
     #define X_IHOLDDELAY     15 // [0-15] 0: min, 15: about 4 seconds
     #define X_I_SCALE_ANALOG  1 // 0: Normal, 1: AIN
-    #define X_MRES           16 // number of microsteps
+    #define X_MRES           32 // number of microsteps
     #define X_TBL             1 // 0-3: set comparator blank time to 16, 24, 36 or 54 clocks, 1 or 2 is recommended
     #define X_TOFF            8 // 0: driver disable, 1: use only with TBL>2, 2-15: off time setting during slow decay phase
 
@@ -912,7 +912,7 @@
     #define Y_IRUN           31
     #define Y_IHOLDDELAY     15
     #define Y_I_SCALE_ANALOG  1
-    #define Y_MRES           16
+    #define Y_MRES           32
     #define Y_TBL             1
     #define Y_TOFF            8
 
@@ -920,7 +920,7 @@
     #define Y2_IRUN          31
     #define Y2_IHOLDDELAY    15
     #define Y2_I_SCALE_ANALOG 1
-    #define Y2_MRES          16
+    #define Y2_MRES          32
     #define Y2_TBL            1
     #define Y2_TOFF           8
 
@@ -928,7 +928,7 @@
     #define Z_IRUN           31
     #define Z_IHOLDDELAY     15
     #define Z_I_SCALE_ANALOG  1
-    #define Z_MRES           16
+    #define Z_MRES           32
     #define Z_TBL             1
     #define Z_TOFF            8
 
@@ -936,7 +936,7 @@
     #define Z2_IRUN          31
     #define Z2_IHOLDDELAY    15
     #define Z2_I_SCALE_ANALOG 1
-    #define Z2_MRES          16
+    #define Z2_MRES          32
     #define Z2_TBL            1
     #define Z2_TOFF           8
 
@@ -944,7 +944,7 @@
     #define E0_IRUN          31
     #define E0_IHOLDDELAY    15
     #define E0_I_SCALE_ANALOG 1
-    #define E0_MRES          16
+    #define E0_MRES          32
     #define E0_TBL            1
     #define E0_TOFF           8
 
@@ -952,7 +952,7 @@
     #define E1_IRUN          31
     #define E1_IHOLDDELAY    15
     #define E1_I_SCALE_ANALOG 1
-    #define E1_MRES          16
+    #define E1_MRES          32
     #define E1_TBL            1
     #define E1_TOFF           8
 

@@ -86,7 +86,7 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(ljubizki, TMC2130)" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
@@ -253,7 +253,7 @@
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 1
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -377,8 +377,8 @@
 // It also enables the M302 command to set the minimum extrusion temperature
 // or to allow moving the extruder regardless of the hotend temperature.
 // *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
-#define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+//#define PREVENT_COLD_EXTRUSION
+//#define EXTRUDE_MINTEMP 170
 
 // This option prevents a single extrusion longer than EXTRUDE_MAXLENGTH.
 // Note that for Bowden Extruders a too-small value here may prevent loading.
@@ -455,7 +455,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
@@ -486,14 +486,16 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
+
+#define STEPS_FACTOR 1
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 76.20*STEPS_FACTOR, 88.88*STEPS_FACTOR, 3200*STEPS_FACTOR, 130*STEPS_FACTOR}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 30 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -501,7 +503,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 4000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -720,9 +722,9 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 200
-#define Y_MAX_POS 200
-#define Z_MAX_POS 200
+#define X_MAX_POS 150
+#define Y_MAX_POS 150
+#define Z_MAX_POS 150
 
 //===========================================================================
 //========================= Filament Runout Sensor ==========================
