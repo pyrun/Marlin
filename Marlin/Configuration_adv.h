@@ -815,7 +815,7 @@
     /* GENERAL CONFIGURATION */
 
     #define GLOBAL_EN_PWM_MODE        0
-    #define GLOBAL_I_SCALE_ANALOG     0 // [0,1] 0: Normal, 1: AIN
+    #define GLOBAL_I_SCALE_ANALOG     1 // [0,1] 0: Normal, 1: AIN
     //#define GLOBAL_INTERNAL_RSENSE    0 // [0,1] 0: Normal, 1: Internal
     #define GLOBAL_EN_PWM_MODE        1 // [0,1] 0: Normal, 1: stealthChop with velocity threshold
     //#define GLOBAL_ENC_COMMUTATION    0 // [0,1]
@@ -835,9 +835,9 @@
 
     /* VELOCITY-DEPENDENT DRIVE FEATURES */
 
-    #define GLOBAL_IHOLD             11 // [0-31] 0: min, 31: max
-    #define GLOBAL_IRUN              20 // [0-31] 0: min, 31: max
-    #define GLOBAL_IHOLDDELAY        15 // [0-15] 0: min, 15: about 4 seconds
+    #define GLOBAL_IHOLD             22 // [0-31] 0: min, 31: max
+    #define GLOBAL_IRUN              31 // [0-31] 0: min, 31: max
+    #define GLOBAL_IHOLDDELAY        5 // [0-15] 0: min, 15: about 4 seconds
     //#define GLOBAL_TPOWERDOWN         0 // [0-255] 0: min, 255: about 4 seconds
     //#define GLOBAL_TPWMTHRS           0 // [0-1048576] e.g. 20 corresponds with 2000 steps/s
     //#define GLOBAL_TCOOLTHRS          0 // [0-1048576] e.g. 20 corresponds with 2000 steps/s
@@ -856,7 +856,7 @@
     //#define GLOBAL_DEDGE              0
     //#define GLOBAL_DISS2G             0
     #define GLOBAL_INTPOL             1 // 0: off 1: 256 microstep interpolation
-    #define GLOBAL_MRES              16 // number of microsteps
+    #define GLOBAL_MRES              32 // number of microsteps
     #define GLOBAL_SYNC               1 // [0-15]
     #define GLOBAL_VHIGHCHM           0 // [0,1] 0: normal, 1: high velocity stepper mode
     #define GLOBAL_VHIGHFS            0 // [0,1] 0: normal, 1: switch to full steps for high velocities

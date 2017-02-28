@@ -487,7 +487,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
 
-#define STEPS_FACTOR 1
+#define STEPS_FACTOR 2
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 76.20*STEPS_FACTOR, 88.88*STEPS_FACTOR, 3200*STEPS_FACTOR, 130*STEPS_FACTOR}
 
 /**
