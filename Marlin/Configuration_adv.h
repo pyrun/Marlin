@@ -787,19 +787,20 @@
 
 #if ENABLED(HAVE_TMC2130DRIVER)
 
-  #define TMC2130_ADVANCED_CONFIGURATION
+  //#define TMC2130_ADVANCED_CONFIGURATION
 
   // CHOOSE YOUR MOTORS HERE, THIS IS MANDATORY
   #define X_IS_TMC2130
   //#define X2_IS_TMC2130
   #define Y_IS_TMC2130
   //#define Y2_IS_TMC2130
-  #define Z_IS_TMC2130
+  //#define Z_IS_TMC2130
   //#define Z2_IS_TMC2130
-  #define E0_IS_TMC2130
+  //#define E0_IS_TMC2130
   //#define E1_IS_TMC2130
   //#define E2_IS_TMC2130
   //#define E3_IS_TMC2130
+   #define GLOBAL_EN_PWM_MODE        1
 
   #if ENABLED(TMC2130_ADVANCED_CONFIGURATION)
 
@@ -944,7 +945,7 @@
     #define E0_IRUN          31
     #define E0_IHOLDDELAY    15
     #define E0_I_SCALE_ANALOG 1
-    #define E0_MRES          32
+    #define E0_MRES          16
     #define E0_TBL            1
     #define E0_TOFF           8
 
